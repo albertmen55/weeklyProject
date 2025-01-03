@@ -89,6 +89,7 @@ const SignIn = () => {
    */
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider(); // Crea una instancia de GoogleAuthProvider.
+    provider.addScope("https://www.googleapis.com/auth/gmail.readonly");
     try {
       // Inicia sesión con Google mediante una ventana emergente.
       const result = await signInWithPopup(auth, provider);
